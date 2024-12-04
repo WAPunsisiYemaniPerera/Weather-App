@@ -1,0 +1,245 @@
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #040330;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+}
+
+/* Loading Page Styles */
+#loading-page {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #117a8e, #11768a);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.loader {
+  text-align: center; /* Ensures all content in the loader is centered */
+}
+
+.loader img {
+  max-width: 200px;
+  margin-bottom: 20px;
+}
+
+.loader p {
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
+}
+
+/* Weather App Layout */
+.weather-app {
+  display: flex;
+  flex-direction: row;
+  width: 90vw;
+  max-width: 1200px;
+  height: 80vh;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.back-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("assets/back.jpg");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.6;
+  transition: background-image 0.5s ease;
+}
+
+#main-content {
+  z-index: 3;
+}
+
+/* Left Panel */
+.left-panel {
+  width: 32%;
+  background: linear-gradient(to bottom, #117a8e, #0e4b58);
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 31px;
+}
+
+.left-panel h2 {
+  font-size: 2rem;
+  color: white;
+}
+
+.left-panel button {
+  width: 59%;
+  padding: 10px;
+  margin: 8px 0;
+  background-color: #40e0d0;
+  border: none;
+  border-radius: 5px;
+  color: #0e4b58;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.left-panel button:hover {
+  background-color: white;
+  transform: scale(1.05);
+}
+
+/* Right Panel */
+.right-panel {
+  position: relative;
+  width: 68%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("assets/home.gif");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.6;
+  transition: background-image 0.5s ease;
+  filter: blur(0px);
+}
+
+.weather-info {
+  position: relative;
+  z-index: 20;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 15px;
+  max-width: 400px;
+}
+
+.weather-info h1 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #81bfda;
+}
+
+.weather-info p {
+  margin: 10px 0;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  body {
+    height: auto;
+    overflow-y: auto;
+    padding: 10px;
+  }
+
+  #main-content {
+    margin: 33px auto;
+  }
+
+  .weather-app {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .left-panel {
+    width: 100%;
+    padding: 15px;
+    padding-top: 0%;
+    padding-bottom: 0%;
+    gap: 6px;
+  }
+
+  .left-panel h2 {
+    font-size: 1.8rem;
+  }
+
+  .left-panel button {
+    padding: 8px;
+    font-size: 1rem;
+  }
+
+  .right-panel {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .weather-info {
+    padding: 15px;
+  }
+
+  .weather-info h1 {
+    font-size: 1.8rem;
+  }
+
+  .weather-info p {
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .loader img {
+    max-width: 120px;
+  }
+
+  .loader p {
+    font-size: 1.2rem;
+  }
+
+  .back-image {
+    width: 100%;
+    height: 100%;
+  }
+
+  .left-panel {
+    padding-top: 4%;
+    padding-bottom: -2%;
+  }
+
+  .left-panel h2 {
+    font-size: 1.5rem;
+  }
+
+  .left-panel button {
+    font-size: 0.9rem;
+  }
+
+  .weather-info h1 {
+    font-size: 1.5rem;
+  }
+
+  .weather-info p {
+    font-size: 0.8rem;
+  }
+}

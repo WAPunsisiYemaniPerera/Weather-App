@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Dynamic Weather App</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Loading Page -->
+    <div id="loading-page">
+      <div class="loader">
+        <img src="assets/load.gif" alt="load" />
+        <p>Loading...</p>
+      </div>
+    </div>
+    <div class="back-image" id="back-image"></div>
+    <div id="main-content" style="display: none">
+      <div class="weather-app">
+        <!-- Left Panel -->
+        <div class="left-panel">
+          <h2>Countries</h2>
+          <button onclick="changeCountry('New York')">New York</button>
+          <button onclick="changeCountry('London')">London</button>
+          <button onclick="changeCountry('Tokyo')">Tokyo</button>
+          <button onclick="changeCountry('Colombo')">Colombo</button>
+          <button onclick="changeCountry('Dubai')">Dubai</button>
+        </div>
+        <!-- Right Panel -->
+        <div id="right-panel" class="right-panel">
+          <div class="background-image" id="background-image"></div>
+          <div class="weather-info">
+            <h1 id="city-name">Select a City to find the weather</h1>
+            <p id="temperature"></p>
+            <p id="description"></p>
+            <p id="wind-speed"></p>
+            <p id="humidity"></p>
+            <p id="feels-like"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
